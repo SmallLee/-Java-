@@ -1,7 +1,13 @@
+package demo;
+
 /**
  * Created by zxy on 2017/7/10.
  */
 public class Demo {
+    /**
+     *
+     * @param args
+     */
     static public void main(String[] args) {
         System.out.println("Hello World");
     }
