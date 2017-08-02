@@ -6,10 +6,11 @@ package demo;
 public class Demo {
     /**
      *
-     * @param args
+     * @param args shuzu
      */
     static public void main(String[] args) {
         System.out.println("Hello World");
+        System.out.println("Crazy Java");
     }
 }
 /*
