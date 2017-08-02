@@ -13,6 +13,7 @@ public class Demo {
         System.out.println("Crazy Java");
         System.out.println("提交代码");
         System.out.println("解决bug2");
+        System.out.println("aaaaaaa");
     }
 }
 /*
