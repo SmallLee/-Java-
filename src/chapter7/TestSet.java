@@ -11,6 +11,7 @@ public class TestSet {
         set.add(new String("hello"));
         boolean flag = set.add(new String("hello"));
         System.out.println(flag);//false
+        System.out.println("测试hashset");
     }
 }
 /*
