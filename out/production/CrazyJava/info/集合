@@ -1,1 +1,16 @@
 数组长度不可变，并且不能保存有映射关系的数据，所以有了集合
+
+HashSet的性能比TreeSet好(特别是最常用的添加，删除)，因为TreeSet需要额外的红黑树算法来维护元素的次序
+
+对于普通插入，删除LinkedHashSet比HashSet略慢，因为要维护链表，不过因为有了链表，遍历LinkedHashSet更快
+
+EnumSet是所有Set的实现类中性能最好的
+
+HashMpa比HashTabl快一点，以为你HashTable实现了同步
+TreeMap比较慢，因为需要额外的红黑树操作来保证顺序
+LinkedHashMap比HashMpa慢一点，因为要维护链表
+
+EnumMap性能最好
+
+
+
