@@ -1,0 +1,35 @@
+启动：
+net sart mysql
+连接：
+mysql -u root -p 密码 -h 主机名
+
+SQL关键字不区分大小写
+
+SQL类型：
+1.查询语句
+2.数据操作语句DML(insert,update,delete)
+2.数据定义语句DDL(create,alter,drop,truncate)
+
+数据库可以存储的对象：
+1.表             table
+2.数据字典                      就是系统表，存放数据库相关信息的表，由系统维护
+3.约束            constraint    进行数据校验，保证数据完整性的规则
+4.视图            view          表里数据的逻辑显示，不存储数据
+5.索引            index         提高查询的性能
+
+
+1.创建表语句
+create table java (name varchar(10),age int default  0,address text,price float);
+
+注意：varchar后面要制定长度，否则会报错
+
+2.查看表的结构
+desc 表名
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(10) | YES  |     | NULL    |       |
+| age     | int(11)     | YES  |     | 0       |       |
+| address | text        | YES  |     | NULL    |       |
+| price   | float       | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
