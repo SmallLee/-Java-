@@ -7,8 +7,8 @@ SQL关键字不区分大小写
 
 SQL类型：
 1.查询语句
-2.数据操作语句DML(insert,update,delete)
-2.数据定义语句DDL(create,alter,drop,truncate)
+2.数据操作语句DML(insert,update,delete)　操作表里的数据
+2.数据定义语句DDL(create,alter,drop,truncate)　主要操作数据表
 
 数据库可以存储的对象：
 1.表             table
@@ -21,7 +21,7 @@ SQL类型：
 1.创建表语句
 create table java (name varchar(10),age int default  0,address text,price float);
 
-注意：varchar后面要制定长度，否则会报错
+注意：varchar后面要指定长度，否则会报错
 
 2.查看表的结构
 desc 表名
@@ -33,3 +33,231 @@ desc 表名
 | address | text        | YES  |     | NULL    |       |
 | price   | float       | YES  |     | NULL    |       |
 +---------+-------------+------+-----+---------+-------+
+
+子查询建表
+create table android as select * from java;
+
+给表增加一列
+alter java add gender int;
+
+增加两列
+alter table java add (size varchar(10) ,color float);
+
+删除一项
+alter table java drop size;
+
+删除多项
+
+alter table java drop color,drop gender;
+
+修改字段定义
+alter table java modify color varchar(10);
+
+更改表名
+alter table java rename java2;
+
+修改字段名称
+alter table java change age age2 int;
+
+更改字段类型和默认值
+alter table java modify size varchar(20) default '3.4';
+
+
+change和modify相比，可以改变列名
+
+查看所有数据库
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+
+MySQL使用information_schema数据库中的TABLES表来保存所有的数据表，采用下面的命令可以查看
+show tables;
+desc TABLES;
+select TABLE_NAME from TABLES where TABLE_NAME = 'java';
++------------+
+| TABLE_NAME |
++------------+
+| java       |
++------------+
+
+删除表
+ drop table android;
+
+采用insert语句插入数据之后才能使用select语句查出数据，
+
+
+truncate 表名(清除表的数据，保留表的结构)，速度比较快，一次删除整个表的结构
+ delete:删除指定的数据，
+
+约束
+NOT NULL
+UNIQUE  指定某列或者列的组合不能重复
+PRIMARY KEY
+FOREIGN KEY
+CHECK
+
+可以在建表时指定非空约束，也能在修改表结构是改变非空约束
+create table android (score int not null,level varchar(10) default 'xyx' not null);
+
+UNIQUE
+//使用列级约束建立索引
+create table android score int(12) not null,level varchar(22) unique;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| score | int(12)     | NO   |     | NULL    |       |
+| level | varchar(22) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+我们可以看到level字段的Key为UNI,此时level的值就不能重复了
+
+create table android (score int not null,
+//使用表级约束建立唯一索引
+level varchar(22),unique (score),
+//指定约束名
+constraint uq unique(level));
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| score | int(11)     | NO   | PRI | NULL    |       |
+| level | varchar(22) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+android表要求两个字段分别都不能重复，
+Duplicate entry '2' for key 'score'
+
+create table android2 (score int not null,level varchar(12),constraint dq unique(score,level));
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| score | int(11)     | NO   | MUL | NULL    |       |
+| level | varchar(12) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+android2表要求两个字段的组合不能出现重复值，否则提示
+Duplicate entry '1-3' for key 'dq'
+
+可以在修改表结构时添加约束
+//删除andnroid表上的索引uq
+alter table android drop index uq;
+
+如果需要对多列建组合约束，或者为唯一的约束指定约束名，就只能用表级约束语法
+
+PRIMARY KEY
+相当于非空和唯一约束，只能有一个主键，能唯一确定表的记录的字段
+create table android (score int(12) primary key,level varchar(22));
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| score | int(12)     | NO   | PRI | NULL    |       |
+| level | varchar(22) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+更改字段为primary key
+ alter table java modify name varchar(22) primary key;
+
+建表是为主键指定名称，在MySQL中没用，主键约束名依然是PRIMARY KEY(表级约束语法)
+create table android2(score int,age varchar(22),constraint pm primary key(score,age));
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| score | int(11)     | NO   | PRI | 0       |       |
+| age   | varchar(22) | NO   | PRI |         |       |
++-------+-------------+------+-----+---------+-------+
+
+表级约束(以多列建立组合主键)
+create table android3 (age int(2),name varchar(22),primary key(age,name));
+
+删除主键约束
+alter table android2 drop primary key;
+
+FOREIGN KEY
+//建立teacher表
+create table teacher(id int auto_increment,primary key,name varchar(22));
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(22) | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+//建立student表，
+create table student(id int auto_increment primary key,name varchar(12),my_teacher int references teacher(id))
+mysql> desc student;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(12) | YES  |     | NULL    |                |
+| my_teacher | int(11)     | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+列级约束语法在MySQL中并不生效，只是为了和标注SQL语句兼容
+表级约束语法 foreign key(本表的外键列) references 主表名(参照到主表的哪个数据列)
+ create table student (id int auto_increment primary key,name varchar(23),
+ my_teacher int ,
+ foreign key(my_teacher) references teacher(id));
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(23) | YES  |     | NULL    |                |
+| my_teacher | int(11)     | YES  | MUL | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+指定外键名
+ create table student2 (id int auto_increment primary key,name varchar(22),
+ my_teacher int
+ ,constraint st_fk foreign key(my_teacher) references teacher(id));
+
+ 删除外键
+ alter table student2 drop foreign key st_fk;
+
+添加外键约束      注意：外键和主键的字段类型要一致
+alter table student2 add foreign key(name) references teacher(id);
+
+当修改外键时，如果和主键有关联，会报下面的错
+Cannot change column 'name': used in a foreign key constraint 'student2_ibfk_2'
+
+
+索引(加速表的查询)
+    创建索引：自动，手动
+    删除索引：自动，手动
+
+   语法：create　index 索引名 on 表名(字段名)
+ create index score_idx on android(score);
+删除
+ drop index score_idx on android;
+
+ 视图
+ create or replace view view_android as select * from android;
+删除视图
+drop view 视图名
+
+同时插入多条数据
+１.子查询插入
+insert into student (my_teacher) select id from teacher;
+values后面跟多个括号
+insert into student (id,name) values (4,'a'),(5,'v');
+
+更新
+update student set name= 'cc' where my_teacher=1;
+删除
+delete from student where name ='a';
+
+delete from 表名  删除表中的所有数据
+
+
+Select语句用法
+select id+5 from student desc;
+
+连接(使用concat)
+select concat(id,,'a') from student;
+
+
+
+

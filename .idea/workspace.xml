@@ -3,47 +3,8 @@
   <component name="ChangeListManager">
     <list id="145b6b55-1d19-432d-b6c6-3143d20dbb31" name="Ignore" comment="Ignore" />
     <list default="true" id="d458e9a4-b297-4d1c-bbf9-aebec4d25a70" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter10/TestCustomException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter10/TestException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter10/TestException2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter10/TestException3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter13/数据库命令" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/GenericMethod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestErasure2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric5.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric6.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric7.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric9.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/Hello.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/HelloArg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/LocalList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestBigDecimal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestCalendar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestCalendar2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestCalendar3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestCalendar4.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestDate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestMatchCase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestNumberFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestPattern.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestPattern2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestPattren3.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestRandom.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestReplace.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestSimpleDateFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestStartEnd.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/TestTimeZone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter9/myRe_zh_CN.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/info/异常处理规则" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mess_en_US.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mess_zh_CN.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CrazyJava/chapter7/TestSychronized.class" afterPath="$PROJECT_DIR$/out/production/CrazyJava/chapter7/TestSychronized.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chapter8/TestGeneric.java" afterPath="$PROJECT_DIR$/src/chapter8/TestGeneric.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chapter13/数据库命令" afterPath="$PROJECT_DIR$/src/chapter13/数据库命令" />
     </list>
     <ignored path="out/" />
     <ignored path=".idea/" />
@@ -126,8 +87,8 @@
       <file leaf-file-name="数据库命令" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/chapter13/数据库命令">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="372">
+              <caret line="255" column="30" lean-forward="true" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -227,7 +188,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -251,7 +212,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,9 +246,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -608,7 +569,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="20" width="1346" height="688" extended-state="0" />
+    <frame x="10" y="20" width="1346" height="688" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1027,8 +988,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chapter13/数据库命令">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="372">
+          <caret line="255" column="30" lean-forward="true" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
           <folding />
         </state>
       </provider>
