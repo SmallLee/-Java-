@@ -22,3 +22,5 @@
 
  @Documented
  被该注解修饰的程序元素会将将注解提取到javadoc文档
+
+ AnnotationProcessor
