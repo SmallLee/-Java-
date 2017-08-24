@@ -1,0 +1,26 @@
+根据注解是否包含成员变量，把注解分为两种：
+
+标记注解 @override
+元数据注解
+
+反射执行方法
+1普通方法
+    采用class对象的newInstance方法创建实例，传给invoke方法
+    method.invoke(obj)
+2.静态方法
+    不需要对象，直接传null
+    method.invoke(null)
+
+ 反射加载内部类
+ Class<?> cls = Class.forName("package.ClassName$InnerClass");
+
+ JDK的元Annotation
+@Retention的值：
+    Retention.CLASS:默认值，编译器把注解记录在class文件中，当运行程序时，JVM不再保留注解
+    Retention.SOURCE:编译器直接丢弃这种策略的注释
+    Retention.RUNTIME:运行时，保留注解，可以通过反射获取
+
+ @Documented
+ 被该注解修饰的程序元素会将将注解提取到javadoc文档
+
+ AnnotationProcessor

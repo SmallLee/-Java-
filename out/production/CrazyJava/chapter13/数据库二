@@ -32,3 +32,11 @@ savepoint a;
 回滚到中间点
 rollback a
 
+数据库连接池(开源组织DBCP和C3P0实现)
+DBCP：Apach实现
+http://commons.apache.org/proper/commons-dbcp/download_dbcp.cgi
+http://commons.apache.org/proper/commons-pool/download_pool.cgi
+
+C3P0:http://sourceforge.net/projects/c3p0
+
+C3P0性能更好，自动清理不再使用的connection,自动清理ResultSet和Statement
